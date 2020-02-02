@@ -1,7 +1,14 @@
 import React, {Component} from 'react';
 
 class App extends Component {
+    componentDidMount() {
+        console.log('componentDidMount');
+    }
+    componentWillMount() {
+        console.log('componentWillMount');
+    }
     constructor(){
+        console.log('constructor');
         super();
         this.state = {
             num: 100
@@ -16,15 +23,15 @@ class App extends Component {
         })
     }
     render(){
+        console.log('render');
         return(
             <div>
-                i am react
-                <hr/>
                 {this.state.num}
-
-                <input type = "text" value={this.state.num} onChange={(e)=>{
+                <input type = "text" value="" onChange={(e)=>{
                     this.changeHandler(e)
                 }} />
+                {/* <button onClick={}>点我加1</button> */}
+                
             </div>
         )
     }
